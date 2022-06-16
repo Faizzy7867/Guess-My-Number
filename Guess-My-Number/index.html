@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Basic Homepage</title>
+  </head>
+  <body>
+    <section>
+      <nav>
+        <a href="./index.html" >
+          <figure>
+            <img src="./assets/ff.png" alt="my logo" id="personal-logo" />
+          </figure>
+        </a>
+        <ul class="nav__link--list">
+          <li>
+            <a href="./game.html" class="nav__link nav__link--anchor ">Easy</a>
+          </li>
+        <ul class="nav__link--list">
+          <li>
+            <a href="#" class="nav__link nav__link--anchor ">Hard</a>
+          </li>
+        <ul class="nav__link--list">
+          <li>
+            <a href="#" class="nav__link nav__link--anchor ">Feedback</a>
+          </li>
+        </ul>
+      </nav>
+    </section>
+    <section id="about">
+        <div class="about container 
+         ">
+         <h2 class="about__title">Guess my number game
+         </h2>
+         <div class="about__wrapper">
+           <p class="about__para">
+             Welcome to my guessing game! You have a choice of choosing between two difficulties, 'easy' and 'hard' which varies in the amount of tries you get and what range of numbers you have for your guess. Guess in the least amount of tries to get your high score!
+            </p>
+          </div>
+        </div>
+        <div class="preview container">
+          <div class="preview__wrapper">
+            <a href="./game.html">
+            <img src="./assets/image of the game.png" class="preview__img" alt="image of the game"></a>
+            <div class="preview__wrapper--bg"></div>
+            <div class="preview__wrapper--bg"></div>
+            <p class="preview__description">Easy Mode</p>
+          </div>
+          <div class="preview__wrapper">
+            <a href="./game.html">
+              <img src="./assets/image of the game.png" class="preview__img" alt="image of the game">
+            </a>
+              <div class="preview__wrapper--bg"></div>
+            <div class="preview__wrapper--bg"></div>
+            <p class="preview__description">Hard Mode</p>
+          </div>
+        </div>
+    </section>
+    <section class="feedback">
+      <div class="feedback__container">
+        <form action="/" id="form">
+          <h2 class="feedback__title">Feedback</h2>
+          <div class="input__control">
+            <label for="username">Name</label>
+              <input type="text" name="username" placeholder="Username">
+          </div>
+          <div class="input__control">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="text" placeholder="Email">
+          </div>
+          <div class="input__control">
+            <label for="comment">Comment</label>
+            <textarea class="input" name="user__message" type="text"></textarea>
+          </div>
+          <button type="submit">Submit Feedback</button>
+        </form>
+      </div>
+    </section>
+    <footer>
+      <p class="copyright">Copyright © 2022 by Faizan</p>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>
