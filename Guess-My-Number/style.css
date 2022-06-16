@@ -13,6 +13,7 @@ li {
 html {
   font-size: 62.5%;
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -35,6 +36,11 @@ header {
   position: relative;
   height: 35vh;
   border-bottom: 7px solid #eee;
+}
+
+.game__wrapper {
+  display: flex;
+  flex-direction: column;
 }
 
 main {
@@ -68,6 +74,11 @@ h1 {
   transform: translate(-50%, -50%);
 }
 
+.game__nav {
+  display: flex;
+  justify-content: end;
+}
+
 .number {
   background: #eee;
   color: #333;
@@ -81,17 +92,28 @@ h1 {
   transform: translate(-50%, 50%);
 }
 
-.between {
-  font-size: 1.4rem;
-  position: absolute;
-  top: 2rem;
-  right: 2rem;
+.tbtn {
+  border: none;
+  font-family: inherit;
+  background-color: #222;
+  color: #fff;
+  cursor: pointer;
 }
 
-.again {
+.between {
+  width: 180px;
+  padding: 3rem 0rem;
+  text-align: center;
   position: absolute;
-  top: 2rem;
-  left: 2rem;
+  bottom: -50%;
+  left: 44.2%;
+  font-size: 10px;
+}
+
+.easy {
+  border: none;
+  background-color: #222;
+  font-family: inherit;
 }
 
 /* .hard {
@@ -101,12 +123,12 @@ h1 {
   margin-left: 10px;
 } */
 
-.home {
+/* .home {
   position: absolute;
   top: 2rem;
   left: 20rem;
   margin-left: 10px;
-}
+} */
 
 .guess {
   background: none;
@@ -128,7 +150,6 @@ h1 {
   font-size: 2rem;
   font-family: inherit;
   padding: 2rem 3rem;
-
   cursor: pointer;
 }
 
@@ -157,7 +178,7 @@ nav {
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  max-width: 1200px;
+  max-width: 1350px;
   margin: 0 auto;
   padding: 0 20px;
 }

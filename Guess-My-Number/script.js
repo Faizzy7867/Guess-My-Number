@@ -70,38 +70,25 @@ document.querySelector('.again').addEventListener('click', function () {
   score = 15;
   secretNumber = Math.trunc(Math.random() * 20) + 1;
   displayMessage('Start guessing...');
+  document.querySelector('.between').textContent = '(Between 1 and 20)';
+  displayTitle('Guess My Number! Easy Mode');
   document.querySelector('.score').textContent = score;
   document.querySelector('.number').textContent = '?';
   document.querySelector('.guess').value = '';
-
-  displayTitle('Guess My Number!');
 
   document.querySelector('body').style.backgroundColor = '#222';
   document.querySelector('.number').style.width = '15rem';
 });
 
-// document.querySelector('.hard').addEventListener('click', function () {
-//   document.querySelector('.hard').textContent = 'Easy Mode';
-//   document.querySelector('.score').textContent = '10';
-//   score = 10;
-//   secretNumber = Math.trunc(Math.random() * 30) + 1;
-//   displayMessage('Start guessing...');
-//   // document.querySelector('.score').textContent = '200';
-//   document.querySelector('.number').textContent = '?';
-//   document.querySelector('.guess').value = '';
+document.querySelector('.hard').addEventListener('click', function () {
+  document.querySelector('.score').textContent = '10';
+  secretNumber = Math.trunc(Math.random() * 30) + 1;
+  displayMessage('Start guessing...');
+  document.querySelector('.between').textContent = '(Between 1 and 30)';
+  displayTitle('Guess My Number! Hard Mode');
+  document.querySelector('.number').textContent = '?';
+  document.querySelector('.guess').value = '';
 
-//   displayTitle('Guess My Number!');
-
-//   document.querySelector('body').style.backgroundColor = '#222';
-//   document.querySelector('.number').style.width = '15rem';
-// });
-
-// const reloadtButton = document.querySelector('.hard');
-// // Reload everything:
-// function reload() {
-//   reload = location.reload();
-// }
-// // Event listeners for reload
-// reloadtButton.addEventListener('click', reload, false);
-
-// Form
+  document.querySelector('body').style.backgroundColor = '#222';
+  document.querySelector('.number').style.width = '15rem';
+});
