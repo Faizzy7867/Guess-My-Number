@@ -49,21 +49,27 @@
     </section>
     <section id="feedback">
       <div class="feedback__container">
-        <form action="/" id="form">
+        <form onsubmit="event.preventDefault(); validateForm()" id="form">
           <h2 class="feedback__title">Feedback</h2>
-          <div class="input__control">
-            <label for="username">Name</label>
-              <input type="text" name="username" placeholder="Faizan">
-          </div>
-          <div class="input__control">
+
+            <label for="name">Name</label>
+              <input type="text" id="name" placeholder="Your name">
+              <small class="error"></small>
+
             <label for="email">Email</label>
-            <input id="email" name="email" type="text" placeholder="example123@example.com">
-          </div>
-          <div class="input__control">
-            <label for="comment">Comment</label>
-            <textarea class="input" name="user__message" type="text"></textarea>
-          </div>
-          <button type="submit">Submit Feedback</button>
+            <input type="text" id="email" placeholder="example123@example.com">
+            <small class="error"></small>
+
+            <label for="message">Comment</label>
+            <textarea class="input" id="message" placeholder="Your message"></textarea>
+            <small class="error"></small>
+         
+            <input type="submit" class="submit__button" value="Submit Feedback">
+
+            <div class="center">
+              <p id="success"></p>
+            </div>
+          
         </form>
       </div>
     </section>

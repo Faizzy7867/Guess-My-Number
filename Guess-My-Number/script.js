@@ -1,5 +1,60 @@
 'use strict';
 
+// FORM
+
+// Get data
+
+const nameInput = document.querySelector('#name');
+const email = document.querySelector('#email');
+const message = document.querySelector('#message');
+const success = document.querySelector('#success');
+const errorNodes = document.querySelectorAll('.error');
+
+// Validate data
+function validateForm() {
+  clearMessages();
+  let errorFlag = false;
+
+  if (nameInput.value.length < 1) {
+    errorNodes[0].innerText = 'Name cannot be blank';
+    nameInput.classList.add('error-border');
+    errorFlag = true;
+  }
+
+  if (!emailIsValid(email.value)) {
+    errorNodes[1].innerText = 'Invalid email address';
+    email.classList.add('error-border');
+    errorFlag = true;
+  }
+
+  if (message.value.length < 1) {
+    errorNodes[2].innerText = 'Please enter message';
+    message.classList.add('error-border');
+    errorFlag = true;
+  }
+
+  if (!errorFlag) {
+    success.innerText = 'Success!';
+  }
+}
+
+// Check if email is valid
+function emailIsValid(email) {
+  let pattern = /\S+@\S+\.\S+/;
+  return pattern.test(email);
+}
+
+// Clear error
+function clearMessages() {
+  for (let i = 0; i < errorNodes.length; i++) {
+    errorNodes[i].innerText = '';
+  }
+  success.innerText = '';
+  nameInput.classList.remove('error-border');
+  email.classList.remove('error-border');
+  message.classList.remove('error-border');
+}
+
 // Function to check on enter
 var input = document.querySelector('.guess');
 input.addEventListener('keypress', function (event) {
@@ -8,6 +63,8 @@ input.addEventListener('keypress', function (event) {
     document.querySelector('.check').click();
   }
 });
+
+// reload page when guessed correctly
 
 // VARIABLE FOR THE SECRET NUMBER
 let secretNumber = Math.trunc(Math.random() * 20) + 1;
@@ -41,7 +98,6 @@ document.querySelector('.check').addEventListener('click', function () {
 
     document.querySelector('.number').textContent = secretNumber;
     document.querySelector('body').style.backgroundColor = '#60b347';
-
     document.querySelector('.number').style.width = '30rem';
 
     if (score > highScore) {
